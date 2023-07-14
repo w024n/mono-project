@@ -11,10 +11,10 @@ jobs:
           name: Build and push Docker image
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker build -t udagram-frontend .
-            docker build -t udagram-api-feed .
-            docker build -t udagram-api-user .
-            docker build -t udagram-reverseproxy .
+            docker build -t udagram-frontend -f udagram-api/Dockerfile .
+            docker build -t udagram-api-feed -f udagram-api/Dockerfile .
+            docker build -t udagram-api-user -f udagram-api/Dockerfile .
+            docker build -t udagram-reverseproxy -f udagram-api/Dockerfile .
             docker tag udagram-frontend w024sec/udagram-frontend:v1
             docker tag udagram-api-feed w024sec/udagram-api-feed:v1
             docker tag udagram-api-user w024sec/udagram-api-user:v1
