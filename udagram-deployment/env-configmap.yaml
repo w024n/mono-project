@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: "587473080103-mono"
+  AWS_BUCKET: "662651497083-udagram"
   AWS_PROFILE: "default"
   AWS_REGION: "us-east-1"
   JWT_SECRET: "testing"
   POSTGRES_DB: "project2" 
-  POSTGRES_HOST: "database-1.cndxk5tej0vv.us-east-1.rds.amazonaws.com"
+  POSTGRES_HOST: "database-1.cxm9nr5b3sue.us-east-1.rds.amazonaws.com"
   URL: http://localhost:8100  
 metadata:
   name: env-config
