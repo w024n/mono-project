@@ -19,7 +19,7 @@ jobs:
             docker tag udagram-api-feed w024sec/udagram-api-feed:v3
             docker tag udagram-api-user w024sec/udagram-api-user:v3
             docker tag udagram-reverseproxy w024sec/udagram-reverseproxy:v3
-            docker push w024sec/udagram-frontend:v3
+            docker push w024sec/udagram-frontend:v7
             docker push w024sec/udagram-api-feed:v3
             docker push w024sec/udagram-api-user:v3
             docker push w024sec/udagram-reverseproxy:v3
