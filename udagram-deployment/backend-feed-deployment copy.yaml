@@ -2,21 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: backend-user
-  name: backend-user
+    service: backend-feed
+  name: backend-feed
 spec:
   replicas: 2
   selector:
     matchLabels:
-      service: backend-user
+      service: backend-feed
   template:
     metadata:
       labels:
-        service: backend-user
+        service: backend-feed
     spec:
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: aws-secret
       containers:
-        - image: w024sec/udagram-api-user:v3
-          name: backend-user
+        - image: w024sec/udagram-api-feed:v3
+          name: backend-feed
           imagePullPolicy: Always
           resources:
             requests:
@@ -71,4 +75,8 @@ spec:
                 secretKeyRef:
                   name: env-secret
                   key: POSTGRES_USERNAME
+          volumeMounts:
+            - name: aws-secret
+              mountPath: "root/.aws"
+              readOnly: true
       restartPolicy: Always
