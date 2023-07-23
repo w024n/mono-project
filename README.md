@@ -1,5 +1,7 @@
 # Udagram Image Filtering Application
 
+Student's Note: Circle CI has been used due to the subscription paywall set up by Travis CI. I've deployed the pipeline and run it successfully as a CI/CD activity.
+
 Udagram is a simple cloud application developed alongside the Udacity Cloud Developer Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
 The project is split into two parts:
